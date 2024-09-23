@@ -1,14 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-5</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                        secondary: '#111111',
+                        navbarColor: '#F9F7F3'
+                    },
+                    fontFamily: {
+                        lexend:'Lexend'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-
+<body class="lexend">
+    <header class="sticky">
+        <!-- navbar stat -->
+        <div class="navbar bg-navbarColor pt-6 lg:px-40 px-10 pb-10">
+            <div class="navbar-start">
+                <!-- <div class="dropdown">
+           
+                </div> -->
+                <a class="hidden md:block">
+                    <button class="rounded-lg bg-primary py-3 px-8 lg:py-4 lg:px-10 text-xl font-bold">Blog</button>
+                </a>
+                <div class="navbar-center md:hidden flex justify-center items-center">
+                    <img src="./assets/logo.png" class="w-[30px] h-[40px]" alt="">
+                    <h3 class="text-secondary md:text-xl font-bold pl-2">Donate Bangladesh</h3>
+                </div>
+            </div>
+            <div class="navbar-center hidden md:block md:flex justify-center items-center">
+                <img src="./assets/logo.png"  alt="">
+                <h3 class="text-secondary text-xl font-bold pl-4">Donate Bangladesh</h3>
+            </div>
+            
+             
+            <div class="navbar-end">
+              
+                    <img src="./assets/coin.png" alt="">
+                    <h2 class="font-[500] md:text-xl pl-2 text-gray-500">
+                        <span>5000</span>
+                        <span>BDT</span>
+                    </h2>
+                </div>
+               
+            </div> 
+        </div>
+        <!-- navbar end -->
+         <!-- banner start -->
+          <section class="flex justify-center items-center mt-40">
+                <div>
+                    <button class="bg-primary py-4 px-8 rounded-lg text-xl font-bold">Donation</button>
+                    <button class=" ml-4 py-4 px-8 font-semibold border text-gray-500 border-2 rounded-lg text-xl">History</button>
+                </div>
+          </section>
+         <!-- banner end -->
+    </header>
+    <main class="w-10/12 mx-auto ">
+        <!-- card -->
+         <section>
+            <div class="card my-10 lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                    <img src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" alt="Album" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Listen</button>
+                    </div>
+                </div>
+            </div>
+         </section>
+    </main>
     <script src="./js/common.js"></script>
     <script src="./js/main-calculation.js"></script>
 </body>
