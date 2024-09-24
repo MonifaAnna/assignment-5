@@ -7,25 +7,33 @@ document.getElementById('donate-btn').addEventListener('click', function (event)
      if (isNaN(donateMoney)) {
         alert('Invaild Donation Amount');
         return;
-     } else if (donateMoney < 0) {
-             alert('Invaild Donation Amount');
+     } else if (donateMoney < 0 ) {
+        alert('Invaild Donation Amount');
         return;
-    }
+    };
+   
 
-    document.getElementById('add-btn').innerText = donateMoney;
+  
     const mainBalance = document.getElementById("current-balance").textContent; // Get the text content of the span
     const mainBalanceNumber = parseFloat(mainBalance.trim());
-    const currentBalance = mainBalanceNumber - donateMoney;// Convert it to a float after trimming spaces
-    document.getElementById('current-balance').innerText = currentBalance;
-
+    
+// 
+  if(donateMoney > mainBalanceNumber){
+        alert('You Do Not Have Sufficient Balance');
+        return;
+    }else{
+        document.getElementById('add-btn').innerText = donateMoney;
+        const currentBalance = mainBalanceNumber - donateMoney;// Convert it to a float after trimming spaces
+        document.getElementById('current-balance').innerText = currentBalance;
+    }
     // history
 const place = document.getElementById('place').innerText;
 const dateTime = new Date();
      const div = document.createElement('div');
      div.classList.add('history-div')
     div.innerHTML = ` 
-    <p>${donateMoney} Taka is ${place}</p>
-    <p>${dateTime}</p>
+    <p class="text-xl font-bold">${donateMoney} Taka is ${place}</p>
+    <p class="pl-4">${dateTime}</p>
     `;
     
     //call the function
@@ -61,19 +69,27 @@ document.getElementById('donate-btn2').addEventListener('click', function (event
         return;
     }
 
-    document.getElementById('add-btn2').innerText = donateMoneyCardSecond;
+  
     const mainBalanceCardSecond = document.getElementById("current-balance").textContent; // Get the text content of the span
     const mainBalanceNumberSecond = parseFloat(mainBalanceCardSecond.trim());
-    const currentBalanceCardSecond = mainBalanceNumberSecond - donateMoneyCardSecond;// Convert it to a float after trimming spaces
-    document.getElementById('current-balance').innerText = currentBalanceCardSecond;
+  
+    // validation
+    if(donateMoneyCardSecond > mainBalanceNumberSecond){
+        alert('You Do Not Have Sufficient Balance');
+        return;
+    }else{
+        document.getElementById('add-btn2').innerText = donateMoneyCardSecond;
+        const currentBalanceCardSecond = mainBalanceNumberSecond - donateMoneyCardSecond;// Convert it to a float after trimming spaces
+        document.getElementById('current-balance').innerText = currentBalanceCardSecond;
+    }
     // history
     const placeSecond = document.getElementById('place2').innerText;
     const dateTimeSecond = new Date();
      const divsecond = document.createElement('div');
      divsecond.classList.add('history-div')
     divsecond.innerHTML = ` 
-    <p>${donateMoneyCardSecond} Taka is ${placeSecond}</p>
-    <p>${dateTimeSecond}</p>
+    <p class="text-xl font-bold">${donateMoneyCardSecond} Taka is ${placeSecond}</p>
+    <p class="pl-4">${dateTimeSecond}</p>
     `;
     //call the function
       history('history-container',divsecond);
@@ -108,11 +124,18 @@ document.getElementById('donation').addEventListener('click', function () {
             return;
         }
     
-        document.getElementById('add-btn3').innerText = donateMoneyCardThird;
         const mainBalanceCardThird = document.getElementById("current-balance").textContent; // Get the text content of the span
         const mainBalanceNumberThird = parseFloat(mainBalanceCardThird.trim());
-        const currentBalanceCardThird = mainBalanceNumberThird - donateMoneyCardThird;// Convert it to a float after trimming spaces
-        document.getElementById('current-balance').innerText = currentBalanceCardThird;
+   
+        // validation
+        if(donateMoneyCardThird > mainBalanceNumberThird){
+            alert('You Do Not Have Sufficient Balance');
+            return;
+        }else{
+            document.getElementById('add-btn3').innerText = donateMoneyCardThird;
+            const currentBalanceCardThird = mainBalanceNumberThird - donateMoneyCardThird;// Convert it to a float after trimming spaces
+            document.getElementById('current-balance').innerText = currentBalanceCardThird;
+        }
         // history
         const placeThird = document.getElementById('place3').innerText;
         const dateTimeThird = new Date();
@@ -124,9 +147,18 @@ document.getElementById('donation').addEventListener('click', function () {
         `;
         //call the function
           history('history-container',divThird);
+
+        //  modal
+        const modal = document.getElementById('modal-3');
+        modal.showModal();
     });
+    const modal = document.getElementById('modal-3');
+    document.getElementById('close-btn').addEventListener('click',function(){
+        modal.close();
+    })
+    // modal
     
-    
+
     document.getElementById('history-btn').addEventListener('click', function (event) {
         showSection('history','history-btn');
         // showSection('history-btn')

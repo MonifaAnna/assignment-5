@@ -71,7 +71,7 @@
          <!-- banner start -->
           <section class="flex justify-center items-center pt-40 pb-5  bg-gray-100">
                 <div>
-                    <button id="donation" class="bg-primary py-4 px-8 rounded-lg text-xl font-bold">Donation</button>
+                    <button id="donation" class="bg-primary border border-2 py-4 px-8 rounded-lg text-xl font-bold">Donation</button>
                     <button id="history-btn" class=" ml-4 py-4 px-8 font-semibold border text-gray-500 border-2 rounded-lg text-xl">History</button>
                 </div>
           </section>
@@ -134,7 +134,7 @@
                     <div class="card-actions">
                         <input type="text" id="input-field2" class="rounded-lg my-4 px-4 py-3 border border-1 w-full" placeholder="Write Donation Amount" name="" >
                         
-                        <button id="donate-btn2" class="px-4 w-full text-[20px] py-4 rounded-lg bg-primary text-secondary font-bold">Donate Now2</button>
+                        <button id="donate-btn2" class="px-4 w-full text-[20px] py-4 rounded-lg bg-primary text-secondary font-bold">Donate Now</button>
                     
                     </div>
                 </div>
@@ -158,6 +158,18 @@
                     </div>
                 </div>
             </div>
+            <dialog id="modal-3" class="modal">
+                <div class="modal-box">
+                  <h3 class="text-lg font-bold">Hello!</h3>
+                  <p class="py-4">Press ESC key or click the button below to close</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button id="close-btn" class="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
          </section>
     </main>
     <script src="./js/common.js"></script>
