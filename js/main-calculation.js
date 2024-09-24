@@ -44,12 +44,13 @@ document.getElementById('donation').addEventListener('click', function () {
 
 });
 
-      //card-2
+      //card-2----------------------card-2---------------------------------------card-2-------
 
       
 document.getElementById('donate-btn2').addEventListener('click', function (event) {
     event.preventDefault();
-    const donateMoneyCardSecond = getInputValueById('input-field');
+    const donateMoneyCardSecond = getInputValueById('input-field2');
+    console.log(donateMoneyCardSecond);
     
     
      if (isNaN(donateMoneyCardSecond)) {
@@ -60,11 +61,22 @@ document.getElementById('donate-btn2').addEventListener('click', function (event
         return;
     }
 
-    document.getElementById('add-btn').innerText = donateMoneyCardSecond;
+    document.getElementById('add-btn2').innerText = donateMoneyCardSecond;
     const mainBalanceCardSecond = document.getElementById("current-balance").textContent; // Get the text content of the span
     const mainBalanceNumberSecond = parseFloat(mainBalanceCardSecond.trim());
     const currentBalanceCardSecond = mainBalanceNumberSecond - donateMoneyCardSecond;// Convert it to a float after trimming spaces
     document.getElementById('current-balance').innerText = currentBalanceCardSecond;
+    // history
+    const placeSecond = document.getElementById('place2').innerText;
+    const dateTimeSecond = new Date();
+     const divsecond = document.createElement('div');
+     divsecond.classList.add('history-div')
+    divsecond.innerHTML = ` 
+    <p>${donateMoneyCardSecond} Taka is ${placeSecond}</p>
+    <p>${dateTimeSecond}</p>
+    `;
+    //call the function
+      history('history-container',divsecond);
 });
 
 
@@ -76,18 +88,52 @@ document.getElementById('donation').addEventListener('click', function () {
     showSection('card','donation');
     // showSection('donation');
 });
-// history
 
-const placeSecond = document.getElementById('place2').innerText;
-const dateTimeSecond = new Date();
-     const divsecond = document.createElement('div');
-     divsecond.classList.add('history-div')
-    divsecond.innerHTML = ` 
-    <p> Taka is ${placeSecond}</p>
-    <p>${dateTime}</p>
-    `;
+
+
+
+      //card-3-----------------card-3-----------------------card-3
+
+      document.getElementById('donate-btn3').addEventListener('click', function (event) {
+        event.preventDefault();
+        const donateMoneyCardThird = getInputValueById('input-field3');
+        console.log(donateMoneyCardThird);
+        
+        
+         if (isNaN(donateMoneyCardThird)) {
+            alert('Invaild Donation Amount');
+            return;
+         } else if (donateMoneyCardThird < 0) {
+                 alert('Invaild Donation Amount');
+            return;
+        }
     
-    //call the function
-      history('history-container',divsecond);
-
-      //card-2
+        document.getElementById('add-btn3').innerText = donateMoneyCardThird;
+        const mainBalanceCardThird = document.getElementById("current-balance").textContent; // Get the text content of the span
+        const mainBalanceNumberThird = parseFloat(mainBalanceCardThird.trim());
+        const currentBalanceCardThird = mainBalanceNumberThird - donateMoneyCardThird;// Convert it to a float after trimming spaces
+        document.getElementById('current-balance').innerText = currentBalanceCardThird;
+        // history
+        const placeThird = document.getElementById('place3').innerText;
+        const dateTimeThird = new Date();
+         const divThird = document.createElement('div');
+         divThird.classList.add('history-div')
+        divThird.innerHTML = ` 
+        <p class="text-xl font-bold">${donateMoneyCardThird} Taka is ${placeThird}</p>
+        <p class="pl-4">${dateTimeThird}</p>
+        `;
+        //call the function
+          history('history-container',divThird);
+    });
+    
+    
+    document.getElementById('history-btn').addEventListener('click', function (event) {
+        showSection('history','history-btn');
+        // showSection('history-btn')
+    });
+    document.getElementById('donation').addEventListener('click', function () {
+        showSection('card','donation');
+        // showSection('donation');
+    });
+    
+    
