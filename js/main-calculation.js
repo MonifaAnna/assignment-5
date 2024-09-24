@@ -39,6 +39,13 @@ const dateTime = new Date();
     //call the function
       history('history-container',div);
 
+    //   modal
+const modalFirst = document.getElementById('modal-1');
+    modalFirst.showModal();
+    document.getElementById('close-btn1').addEventListener('click',function(){
+        modalFirst.close();
+    })
+
 });
 
 
@@ -93,6 +100,12 @@ document.getElementById('donate-btn2').addEventListener('click', function (event
     `;
     //call the function
       history('history-container',divsecond);
+    //   modal
+    const modalsecond = document.getElementById('modal-2');
+    modalsecond.showModal();
+    document.getElementById('close-btn2').addEventListener('click',function(){
+        modalsecond.close();
+    })
 });
 
 
@@ -151,12 +164,11 @@ document.getElementById('donation').addEventListener('click', function () {
         //  modal
         const modal = document.getElementById('modal-3');
         modal.showModal();
+        document.getElementById('close-btn3').addEventListener('click',function(){
+            modal.close();
+        })
     });
-    const modal = document.getElementById('modal-3');
-    document.getElementById('close-btn').addEventListener('click',function(){
-        modal.close();
-    })
-    // modal
+  
     
 
     document.getElementById('history-btn').addEventListener('click', function (event) {
