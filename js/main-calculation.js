@@ -3,7 +3,7 @@ document.getElementById('donate-btn').addEventListener('click', function (event)
     event.preventDefault();
     const donateMoney = getInputValueById('input-field');
     
-    
+    // validation
      if (isNaN(donateMoney)) {
         alert('Invaild Donation Amount');
         return;
@@ -12,8 +12,6 @@ document.getElementById('donate-btn').addEventListener('click', function (event)
         return;
     };
    
-
-  
     const mainBalance = document.getElementById("current-balance").textContent; // Get the text content of the span
     const mainBalanceNumber = parseFloat(mainBalance.trim());
     
@@ -45,7 +43,7 @@ const modalFirst = document.getElementById('modal-1');
     document.getElementById('close-btn1').addEventListener('click',function(){
         modalFirst.close();
     })
-
+  
 });
 
 

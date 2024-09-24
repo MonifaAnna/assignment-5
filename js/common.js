@@ -1,11 +1,13 @@
 // shared funtion
 
 function getInputValueById(id) {
-     const inputValue = document.getElementById(id).value;
+     const inputElement = document.getElementById(id);
+     const inputValue = inputElement.value;
     const inputNumber = parseFloat(inputValue);
+    inputElement.value = '';
     return inputNumber; 
     
-}
+};
 
 // history
 
