@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                        secondary: '#111111',
+                        navbarColor: '#F9F7F3'
+                    },
+                    fontFamily: {
+                        lexend: 'Lexend'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="sticky top-0 z-10">
+        <!-- navbar stat -->
+        <div class="navbar bg-navbarColor pt-6 lg:px-44 px-10 pb-10">
+            <div class="navbar-start">
+                <!-- <div class="dropdown">
+               
+                    </div> -->
+                <a href="./index.html" class="hidden md:block">
+
+                    <button class="rounded-lg bg-primary py-3 px-8 lg:py-4 lg:px-10 text-xl font-bold">Home</button>
+                </a>
+                <div class="navbar-center md:hidden flex justify-center items-center">
+                    <img src="./assets/logo.png" class="w-[30px] h-[40px]" alt="">
+                    <h3 class="text-secondary md:text-xl font-bold pl-2">Donate Bangladesh</h3>
+                </div>
+            </div>
+            <div class="navbar-center hidden md:block md:flex justify-center items-center">
+                <img src="./assets/logo.png" alt="">
+                <h3 class="text-secondary text-xl font-bold pl-4">Donate Bangladesh</h3>
+            </div>
+    
+    
+            <div class="navbar-end">
+    
+                <img src="./assets/coin.png" alt="">
+                <h2 class="font-[500] md:text-xl pl-2 text-gray-500">
+                    <span>5000</span>
+                    <span>BDT</span>
+                </h2>
+            </div>
+    
+        </div>
+        </div>
+        <!-- navbar end -->
+        
+    </header>
+    <main class="w-11/12 mx-auto">
+        <div class="flex items-center">
+                    <h1 class="text-3xl font-bold">Important FAQ</h1>
+                    <img src="./assets/FAQ.gif" class="w-[100px] h-[90px]" alt="">
+        </div>
+
+        <div class="collapse bg-base-100 border border-1 p-3 my-5">
+            <input type="checkbox" />
+            <div class="collapse-title text-xl font-medium">What is the Document Object Model(DOM) ?</div>
+            <div class="collapse-content">
+                <p>The Document Object Model (DOM) is a programming interface that represents a web page's structure as a tree of objects.<br>
+                It allows developers to interact with and manipulate HTML, CSS, and content dynamically using JavaScript.</p>
+            </div>
+        </div>
+        <div class="collapse bg-base-100 border border-1 p-3">
+            <input type="checkbox" />
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM ?</div>
+            <div class="collapse-content">
+                <p class="text-xl font-medium">
+                    To select an element from the DOM, you can use JavaScript methods like:
+                </p>
+                <ul class="list-disc pl-7">
+                    <li>document.getElementById('id') – Selects an element by its ID.</li>
+                    <li>document.getElementsByClassName('class') – Selects all elements with a specific class.</li>
+                    <li>document.getElementsByTagName('tag') – Selects all elements with a specific tag name.</li>
+                    <li>document.querySelector('selector') – Selects the first element that matches a CSS selector.</li>
+                    <li>document.querySelectorAll('selector') – Selects all elements that match a CSS selector.</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="collapse bg-base-100 border border-1 p-3 my-5">
+            <input type="checkbox" />
+            <div class="collapse-title text-xl font-medium">What is the event delegation in the context of the DOM ?</div>
+            <div class="collapse-content">
+                <p>Event delegation is a technique in the DOM where you attach a single event listener to a parent element instead of<br>
+                adding multiple listeners to child elements. The event listener takes advantage of event bubbling, allowing it to detect<br>
+                and handle events triggered by any of its child elements.<br>
+                
+                This method improves performance and simplifies code, especially when working with dynamic elements.</p>
+            </div>
+        </div>
+        <div class="collapse bg-base-100 border border-1 p-3 my-5">
+            <input type="checkbox" />
+            <div class="collapse-title text-xl font-medium">How do you manipulate an elements attributes and style using DOM?</div>
+            <div class="collapse-content">
+                <p>To manipulate an element's attributes and styles using the DOM:</p>
+                <ul class="list-disc pl-7">
+                    <li>Attributes: Use setAttribute() to set an attribute and getAttribute() to retrieve it.</li>
+                    <li>Example:element.setAttribute('src', 'image.jpg');</li>
+                    <li>Styles: Access the style property to modify CSS styles directly.</li>
+                    <li>Example:element.style.color = 'red';
+                    element.style.fontSize = '20px';</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
