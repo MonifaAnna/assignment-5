@@ -63,7 +63,6 @@ document.getElementById('donation').addEventListener('click', function () {
 document.getElementById('donate-btn2').addEventListener('click', function (event) {
     event.preventDefault();
     const donateMoneyCardSecond = getInputValueById('input-field2');
-    console.log(donateMoneyCardSecond);
     
     
      if (isNaN(donateMoneyCardSecond)) {
